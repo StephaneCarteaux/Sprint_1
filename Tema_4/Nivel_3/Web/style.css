@@ -1,0 +1,39 @@
+h1{
+    padding: 10px;
+}
+
+.header{
+    background: #364259;
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+
+.info{
+    padding: 10px;
+}
+
+.poblacion{
+    padding-left: 10px;
+}
+
+.nombrePelicula{
+    font-weight: Bold;
+}
+
+.maxDuracion{
+    padding: 10px;
+    font-style: italic;
+    color: grey;
+}
+
+.buscarPorDirector{
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    color: grey;
+}
+
+.buscarPorDirector .director {
+    font-weight: Bold;
+}
