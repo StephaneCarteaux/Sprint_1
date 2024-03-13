@@ -5,7 +5,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Stef\\Nivel_2\\": "src/"
+            "Tema_7\\scr\\": "src/",
+            "Tema_7\\tests\\": "tests/"
         }
     },
     "require": {}

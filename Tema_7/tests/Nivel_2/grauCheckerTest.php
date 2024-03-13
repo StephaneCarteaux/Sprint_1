@@ -1,7 +1,7 @@
 <?php
+namespace Tema_7\scr\nivel_2;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-require (__DIR__ .'/../../src/nivel_2/grauChecker.php');
 
 // Nivel_2 Exercici 2
 final class GrauCheckerTest extends TestCase

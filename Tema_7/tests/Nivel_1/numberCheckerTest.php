@@ -1,6 +1,6 @@
 <?php
+namespace Tema_7\scr\nivel_1;
 use PHPUnit\Framework\TestCase;
-require (__DIR__ .'/../../src/nivel_1/numberChecker.php');
 
 // Nivel_1 Exercici 1
 class NumberCheckerTest extends TestCase

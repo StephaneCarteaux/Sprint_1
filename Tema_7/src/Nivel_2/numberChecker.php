@@ -1,4 +1,5 @@
 <?php
+namespace Tema_7\scr\nivel_2;
 // Nivel_2 Exercici 1
 class NumberChecker  {
 

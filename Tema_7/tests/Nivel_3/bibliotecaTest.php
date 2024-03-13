@@ -1,10 +1,9 @@
 <?php
+namespace Tema_7\scr\nivel_3;
 // Para ese ejercicio me he tenido que ayudar de chatGPT
 // así que buena parte del trabajo ha sido analizar y entender el codigo que me proponía...
 
 use PHPUnit\Framework\TestCase;
-require (__DIR__ .'/../../src/Nivel_3/biblioteca.php');
-require (__DIR__ .'/../../src/Nivel_3/libro.php');
 
 class BibliotecaTest extends TestCase {
     public function testAgregarLibro() {

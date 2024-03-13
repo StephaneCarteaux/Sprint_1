@@ -1,4 +1,5 @@
 <?php
+namespace Tema_7\scr\nivel_2;
 // $nota = readline ("Introduce tu nota sobre 10: ");
 // verificarGrau($nota);
 

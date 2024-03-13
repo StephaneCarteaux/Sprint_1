@@ -1,7 +1,8 @@
 <?php
+namespace Tema_7\scr\nivel_2;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-require (__DIR__ .'/../../src/nivel_2/numberChecker.php');
+// require (__DIR__ .'/../../src/nivel_2/numberChecker.php');
 
 // Nivel_2 Exercici 1
 class NumberCheckerTest extends TestCase

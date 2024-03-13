@@ -1,4 +1,5 @@
 <?php
+namespace Tema_7\scr\nivel_3;
 class Biblioteca {
 
     public $libros = [];
