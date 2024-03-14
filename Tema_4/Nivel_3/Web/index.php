@@ -1,5 +1,8 @@
-<!Doctype html>
+<?php
+require_once 'datos.php';
+?>
 
+<!Doctype html>
 <html lang="es">
 
 <head>
@@ -11,68 +14,33 @@
 
 <body>
 
-    <?php
+    <div class='container'>
+        <h1>Cartelera</h1>
 
-    include 'clases.php';
-    include 'datos.php';
-
-    echo "<div class='container'>";
-
-    echo "<h1>Cartelera</h1>";
-
-    mostarDatosPeliculas($cinema);
-
-    function mostarDatosPeliculas($cinema)
-    {
-
-        for ($i = 1; $i <= Cinema::$id; $i++) {
-            echo "<div class='header'>";
-            echo "<div class='cinema'>" . $cinema[$i]->nombre . "</div>";
-            echo "<div class='poblacion'>" . "(" . $cinema[$i]->poblacion . ")" . "</div>";
-            echo "</div>";
-            foreach ($cinema[$i]->peliculas as $pelicula) {
-                echo "<div class='info'>";
-                echo "<div class='nombrePelicula'>" . $pelicula->nombre . "</div>";
-                echo "<div class='duracion'>" . $pelicula->duracion . " min." . "</div>";
-                echo "<div class='director'>" . $pelicula->director . "</div>";
-                echo "</div>";
-            }
-            mostarPeliConMayorDuracion($cinema[$i]);
-        }
-    }
-
-    function mostarPeliConMayorDuracion($cinema)
-    {
-        $maxDuracion = 0;
-        $maxDuracionNombre = "";
-        foreach ($cinema->peliculas as $pelicula) {
-            if ($pelicula->duracion > $maxDuracion) {
-                $maxDuracion = $pelicula->duracion;
-                $maxDuracionNombre = $pelicula->nombre;
+        <?php for ($i = 1; $i <= Cinema::$id; $i++) { ?>
+            <div class='header'>
+                <div class='cinema'><?php echo $cinema[$i]->getNombre() ?></div>
+                <div class='poblacion'><?php echo $cinema[$i]->getPoblacion() ?></div>
+            </div>
+            <?php foreach ($cinema[$i]->getPeliculas() as $pelicula) { ?>
+                <div class='info'>
+                    <div class='nombrePelicula'><?php echo $pelicula->getNombre() ?></div>
+                    <div class='duracion'><?php echo $pelicula->getDuracion() ?> min.</div>
+                    <div class='director'><?php echo $pelicula->getDirector() ?></div>
+                </div>
+        <?php
             }
         }
-        echo "<div class='maxDuracion'>" . $maxDuracionNombre . " es la pelicula más larga." . "</div>";
-    }
-    
-    buscarPorDirector($cinema, 'Cristopher Nolan');
+        ?>
 
-    function buscarPorDirector($cinema, $director)
-    {
-        echo "<div class='buscarPorDirector'>";
-        echo "<div class='director'>Busqueda por director: Cristopher Nolan</div>";
+        <div class='maxDuracion'>
+            <?php echo $pelicula->mostarPeliConMayorDuracion($cinema) ?>
+        </div>
 
-        for ($i = 1; $i <= Cinema::$id; $i++) {
-            foreach ($cinema[$i]->peliculas as $pelicula) {
-                if ($pelicula->director == $director) {
-                        echo "Puedes ver " . $pelicula->nombre . " en: ".$cinema[$i]->nombre . " (" . $cinema[$i]->poblacion . ") ";
-                        echo "<br>";
-                }
-            }
-        }
-    }
-    echo "</div>";
-    ?>
+        <div class='buscarPorDirector'>
+            <div class='director'>Busqueda por director: Cristopher Nolan</div>
+            <?php $pelicula->buscarPorDirector($cinema, 'Cristopher Nolan') ?>
+        </div>
 
 </body>
-
 </html>

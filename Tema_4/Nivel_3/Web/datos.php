@@ -1,4 +1,7 @@
 <?php
+require_once 'pelicula.php';
+require_once 'cinema.php';
+
 $pelicula[1] = new Pelicula('Oppenheimer', 180, 'Cristopher Nolan');
 $pelicula[2] = new Pelicula('Dune', 166, 'Denis Villeneuve');
 $pelicula[3] = new Pelicula('Kung Fu Panda 4', 94, 'Mike Mitchell');
