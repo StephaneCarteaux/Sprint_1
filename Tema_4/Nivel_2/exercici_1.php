@@ -6,12 +6,12 @@ class PokerDice {
     public $ultimaTirada;
     // Necesitamos que $total_Tiradas esté atada a la clase y no a las instancias
     public static $totalTiradas = 0;
+    public static array $figures = ['As', 'K', 'Q', 'J', '8', '7'];
 
     public function throw(){
 
-        $figures = ['As', 'K', 'Q', 'J', '8', '7'];
-        $tirada = array_rand($figures, 1);
-        $this->ultimaTirada = $figures[$tirada];
+        $tirada = array_rand(self::$figures, 1);
+        $this->ultimaTirada = self::$figures[$tirada];
         self::$totalTiradas++;
     }
 
